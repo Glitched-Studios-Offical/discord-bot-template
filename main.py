@@ -20,7 +20,6 @@ BOT_SUPPORTSERVER = "http://discord.gg/invite/example"
 intents = discord.Intents.all()
 bot = commands.Bot(command_prefix=BOT_PREFIX, intents=intents)
 bot.remove_command("help")
-# Event listeners
 @bot.event
 async def on_ready():
     print(f"{bot.user} has connected to Discord!")
@@ -247,5 +246,6 @@ async def cmdlist(ctx):
     for cmd_name, cmd_desc in command_list:
         embed.add_field(name=cmd_name, value=cmd_desc, inline=False)
     await ctx.send(embed=embed)
-# Run the bot
+
+
 bot.run(BOT_TOKEN)
